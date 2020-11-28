@@ -110,8 +110,10 @@ body{
     background: #B0B0B0;
 }
 
-.download-button{
-    display: none;
+.add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
 }
 
 /*-------------- s3_footer ---------------*/
