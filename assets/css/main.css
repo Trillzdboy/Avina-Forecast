@@ -110,6 +110,10 @@ body{
     background: #B0B0B0;
 }
 
+.download-button{
+    display: none;
+}
+
 /*-------------- s3_footer ---------------*/
 .s3_footer{
     background: #B09595;

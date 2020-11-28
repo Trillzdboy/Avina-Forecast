@@ -15,8 +15,17 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <title>AVINA FORECAST - Accurate Weather Report</title>
+    
+    <!-- Installable Assets -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b09595">
+    <meta name="msapplication-TileColor" content="#b09595">
+    <!--<meta name="theme-color" content="#b09595"> -->
   </head>
-  <body id="top">
+  <body id="top"> 
 
     <!-- s0_navbar -->
         <nav class="navbar navbar-expand-lg navigation">
@@ -30,8 +39,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <form action="" class="test_center">
-                            <input id="input" type="text" placeholder="Enter A City" class="inputtext">
-                            <button id="button" class="buttton">Search</button>
+                            <input id="input" type="text" placeholder="Enter A City" class="inputtext" value="london">
+                            <button id="clicked" class="buttton" value="Submit">Search</button>
                         </form>
                     </ul>
                 </div>
@@ -43,7 +52,7 @@
             <div class="container py-4">
                 <aside class="text-center">
                    <img src="/assets/images/PngItem_453216%201.png" alt="">
-                    <h1 class="locationname">France</h1>
+                    <h1 class="locationname"><span id="country">France</span><span>,</span> <span id="sys">Ng</span>.</h1>
                 </aside>
             </div>
         </section>
@@ -57,10 +66,10 @@
                           TEMPERATURE
                         </div>
                         <div class="card-body card_body">
-                          <p class="card-text">0°C</p>
+                          <p class="card-text"><span id="temperature">0</span>°C</p>
                         </div>
                         <div class="card-footer text-muted">
-                          2 days ago
+                          Just Now
                         </div>
                     </div>
                     
@@ -69,10 +78,10 @@
                           PRESSURE
                         </div>
                         <div class="card-body card_body">
-                          <p class="card-text">1012.11hPa</p>
+                          <p class="card-text"><span id="pressure">1012.11</span>hPa</p>
                         </div>
                         <div class="card-footer text-muted">
-                          2 days ago
+                          Just Now
                         </div>
                     </div>
                     
@@ -81,10 +90,10 @@
                           WIND SPEED
                         </div>
                         <div class="card-body card_body">
-                          <p class="card-text">2.1m/s</p>
+                          <p class="card-text"><span id="speed">2.1</span>m/s</p>
                         </div>
                         <div class="card-footer text-muted">
-                          2 days ago
+                          Just Now
                         </div>
                     </div>
                     
@@ -93,22 +102,22 @@
                           HUMIDITY
                         </div>
                         <div class="card-body card_body">
-                          <p class="card-text">73%</p>
+                          <p class="card-text"><span id="humidity">73</span>%</p>
                         </div>
                         <div class="card-footer text-muted">
-                          2 days ago
+                          Just Now
                         </div>
                     </div>
                     
                     <div class="card text-center card5">
                         <div class="card-header">
-                          XXX
+                          DIRECTION
                         </div>
                         <div class="card-body card_body">
-                          <p class="card-text">XXX*</p>
+                          <p class="card-text"><span id="direction">xxx</span></p>
                         </div>
                         <div class="card-footer text-muted">
-                          2 days ago
+                          Just Now
                         </div>
                     </div>
                     
@@ -120,11 +129,12 @@
                           <p class="card-text">YYY8</p>
                         </div>
                         <div class="card-footer text-muted">
-                          2 days ago
+                          Just Now
                         </div>
                     </div>
                 
             </div>
+            <button class="download-button">Download App</button>
         </section>
         
     <!-- s3_footer -->
