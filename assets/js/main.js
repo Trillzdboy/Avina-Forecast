@@ -173,26 +173,4 @@ if('serviceWorker' in navigator) {
 }
 
 // Custom Download Button Prompt
-let deferredPrompt;
-const downloadButton = document.querySelector('.download-button');
 
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
-
-    // Make the Download App button visible.
-    downloadButton.style.display = 'inline-block'; 
-});
-
-downloadButton.addEventListener('click', (e) => {
-    deferredPrompt.prompt(); // This will display the Add to Homescreen dialog.
-    deferredPrompt.userChoice
-        .then(choiceResult => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the A2HS prompt');
-            } else {
-                console.log('User dismissed the A2HS prompt');
-            }
-            deferredPrompt = null;
-        });
-})
