@@ -37,12 +37,25 @@ body{
     }
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
 
 /*-------------- s1_header -------------*/
 .locationname{
     font-size: 50px;
 }
+.headerSpace{
+    padding: 20px;
+}
 
+@media (max-width: 992px){
+   .headerSpace{
+        padding: 10px;
+    } 
+}
 /*-------------- s2_body ---------------*/
 .s2_body_grid{
     display: grid;
@@ -110,6 +123,13 @@ body{
     background: #B0B0B0;
 }
 
+.hstate:hover {
+    background:#676470;
+    transition:all 0.3s ease;
+    -webkit-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+        transform: scale(1.03);
+}
 .add-button {
   position: absolute;
   top: 1px;

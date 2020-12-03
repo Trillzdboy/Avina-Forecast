@@ -5,9 +5,9 @@ var pressure = document.getElementById('pressure');
 var speed = document.getElementById('speed');
 var humidity = document.getElementById('humidity');
 var direction = document.getElementById('direction');
+var feel = document.getElementById('hasA');
 
 var button = document.getElementById('clicked');
-var input = document.getElementById('input');
 
 function k2c(k) {
     return Math.round(k - 273.15);
@@ -55,6 +55,7 @@ function updateByGeo(lat, lon) {
         speed.innerHTML = data.wind.speed;
         humidity.innerHTML = data.main.humidity;
         direction.innerHTML = degreesToDirection(data.wind.deg);
+        feel.innerHTML = data.weather[0].description;
         
     } else {
         console.log('error');
@@ -67,56 +68,15 @@ request.send();
 } 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*var request = new XMLHttpRequest()
-    request.open('Get', 'https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=f6e72d8d9402d6a2fe860d4fd4630eab', true)
-    request.onload = function () {
-    var data = JSON.parse(this.response);
-    
-    if (request.status >= 200 && request.status <400) {
-        console.log(data);
-        country.innerHTML = data.name;
-        sys.innerHTML = data.sys.country;
-        temperature.innerHTML = k2c(data.main.temp);
-        pressure.innerHTML = data.main.pressure;
-        speed.innerHTML = data.wind.speed;
-        humidity.innerHTML = data.main.humidity;
-        direction.innerHTML = degreesToDirection(data.wind.deg);
-        
-    } else {
-        console.log('error');
-    }
-    
-    
-}
-
-request.send(); */
-
-
-/*button.addEventListener("click", weather());
-
 function weather() {
+    var input = document.getElementById('input').value;
+    console.log(input)
     var request = new XMLHttpRequest()
-    request.open('Get', 'https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=f6e72d8d9402d6a2fe860d4fd4630eab', true)
+    request.open('Get', 'https://api.openweathermap.org/data/2.5/weather?q='+input+'&appid=f6e72d8d9402d6a2fe860d4fd4630eab', true)
     request.onload = function () {
     var data = JSON.parse(this.response);
+    console.log(data)
+
     
     if (request.status >= 200 && request.status <400) {
         console.log(data);
@@ -127,6 +87,7 @@ function weather() {
         speed.innerHTML = data.wind.speed;
         humidity.innerHTML = data.main.humidity;
         direction.innerHTML = degreesToDirection(data.wind.deg);
+        feel.innerHTML = data.weather[0].description;
         
     } else {
         console.log('error');
@@ -136,26 +97,9 @@ function weather() {
 }
 
 request.send();
-} */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button.addEventListener("click", weather);
 
 // ServiceWorker Registration
 if('serviceWorker' in navigator) {
@@ -171,4 +115,3 @@ if('serviceWorker' in navigator) {
             });
     });
 }
-
